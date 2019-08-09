@@ -1,0 +1,62 @@
+     <span id="helpBlock1" class="help-block"></span>
+            <%= form_for  @user,:remote=>"true" do |f| %>  
+ 
+            					  <div class="form-row">
+					  <div class="form-group col-md-6">
+                       <div class="col-xs-6">
+						    <label for="first_name"><h6>First Name</h6></label>  
+                   
+                      <%= f.text_field :first_name, :class => 'form-control' %> 
+                     
+              </div>
+              </div>
+              <div class="form-group col-md-6">
+                       <div class="col-xs-6">   
+			 <label for="last_name"><h6>Last Name</h6></label>      
+                              
+             <%= f.text_field :last_name , :class => 'form-control' %> 			   
+						            
+               
+            </div>
+              </div> 
+              </div> 
+                <div class="form-row">
+					  <div class="form-group col-md-6">
+                       <div class="col-xs-6">
+         <label for="password"><h6>Password</h6></label>  
+                               
+             <%= f.password_field :password , :class => 'form-control' %> 						   
+						   
+                 
+              </div>
+              </div>  
+              <div class="form-group col-md-6">
+                       <div class="col-xs-6">
+					    <label for="password_confirmation"><h6>Confirm Password</h6></label>  
+                
+               <%= f.password_field :password_confirmation , :class => 'form-control' %>  	   			   
+                  
+                      </div>
+              </div>
+              </div>
+            <div class="form-row">
+					  <div class="form-group col-md-6">
+                       <div class="col-xs-6">           
+         <label for="email"><h6>Email</h6></label>
+
+                      <%= f.text_field :email, :class => 'form-control' %> 
+             </div>
+              </div> 
+              
+                <div class="form-group col-md-6">
+                       <div class="col-xs-6">
+                      <label for="phone_no"><h6>Mobile No.</h6></label>  
+                 
+               <%= f.text_field :phone_no , :class => 'form-control' %>  
+               </div>
+              </div>                              
+              </div>                              
+               <center><%= f.submit 'Update Profile', :name=> 'register', :class => 'sitemaincolor buttonedit' %></center>                  
+ 
+       <% end %> 
+    

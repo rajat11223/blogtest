@@ -1,0 +1,22 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content p-2">
+        <p>
+          <strong><%= comment.name %>:</strong>
+          <%= comment.comment %>
+        </p>
+      </div>
+    </div>
+   
+    <% if (@post.userid.to_i == session[:user_id].to_i) %>
+    
+     <%= link_to 'Delete', [comment.post, comment],
+                  method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+                  <% else %>
+
+                  <% end %>
+                 
+  </article>
+
+</div>

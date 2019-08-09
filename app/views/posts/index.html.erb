@@ -1,0 +1,25 @@
+<% content_for :page_title,  "Blog Posts" %>
+
+<div class="container popupdata homemessg">
+  <%= flash_messages %>
+  </div> 
+
+<div class="container">
+	<% @posts.each do |post| %>
+<div class="item mb-5 card box-shadow">
+	<div class="card-content">
+				    <div class="media">
+				    	<%= image_tag(post.image.url, class: "mr-3 img-fluid post-thumb d-none d-md-flex", alt: "Edit Entry") %>
+					  
+					    <div class="media-body"> 
+						    <h3 class="title mb-1 posttitle"><%= link_to post.title.capitalize, post  %></h3>
+						    <div class="meta mb-1"><span class="date">By <strong><%= User.where(:id=>post.userid).pluck(:first_name).shift.strip.capitalize %></strong>/ on <%= post.created_at.strftime("%d %b, %Y") %> </span><span class="comment"><span class="tag is-rounded ucomment"><%= post.comments.count %> comments</span></span></div>
+						    <div class="intro"><%= post.content.truncate_words(100) %></div>
+						    <%= link_to "Read more →", post,:class=>"more-link"  %>
+						    
+					    </div><!--//media-body-->
+				    </div><!--//media-->
+				</div>
+			    </div>
+			    <% end %>
+			</div>

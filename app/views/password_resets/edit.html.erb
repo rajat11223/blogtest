@@ -1,0 +1,82 @@
+  	<%= render 'categories/header' %>
+ 
+
+
+<div class="container bootstrap snippet">  
+	
+	<center><h3 class="my_prof">Reset Your Password Here:</h3></center>
+	
+	
+    <div class="row">
+  		<div class="col-sm-4"><!--left col-->
+              
+
+      <div class="text-center">
+        <img src="/assets/avatar_2x.png" class="avatar img-circle img-thumbnail rounded-circle" alt="avatar">
+        <!--<h6>Upload a different photo...</h6>
+        <input type="file" class="text-center center-block file-upload">-->
+      </div></hr><br>
+
+          
+          
+        
+       
+          
+        </div><!--/col-3-->
+    	<div class="col-sm-8">
+		<div class="card">
+		<div class="card-body">
+			<div class="container popupdata">
+  <%= flash_messages %>
+  </div>  
+			<span id="helpBlock1" class="help-block"></span>
+			<div id="editform">
+        <%= form_for @user, :url => password_reset_path,:remote=>"true",:method=>"PATCH" do |f| %>  
+     
+      
+					  <div class="form-row">
+					  <div class="form-group col-md-12">
+                       <center><div class="col-xs-12 col-md-8 mylabel">
+                              <label for="first_name"><h6>Password</h6></label>
+                              <%= f.password_field :password ,:class=>"full-width has-padding has-border form-control",:placeholder=>"Enter your new-password" %>
+                              <%= hidden_field_tag :id, params[:id] %>
+                          </div></center>
+					       </div>
+					       </div>
+					       
+					  <div class="form-row">
+					  <div class="form-group col-md-12">
+                      <center> <div class="col-xs-12 col-md-8 mylabel">
+                              <label for="first_name"><h6>Confirm Password</h6></label>
+                             
+                               <%= f.password_field :password_confirmation ,:class=>"full-width has-padding has-border form-control",:placeholder=>"Re-enter your password" %>
+                          </div></center>
+					       </div>
+					       </div>
+        
+        
+        
+
+                   <div class="form-group">
+                           <div class="col-xs-12 button_to">                  
+                         
+                              <center><%= f.submit "Update Password",:class=>"btn-lg sitemaincolor buttonedit" %></center>	
+                               <!--	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Save</button>-->
+                            </div>
+                      </div>
+
+  
+<% end %>
+              	
+          </div>    	
+              	</div>
+              	</div>
+    </div><!--/col-9-->
+    </div><!--/row-->
+
+   </div>
+
+
+
+ <%= render 'categories/footer' %> 	
+ 

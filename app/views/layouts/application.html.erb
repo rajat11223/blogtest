@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DemoBlog</title>
+    <%= csrf_meta_tags %>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<section class="hero is-primary is-medium">
+	  <!-- Hero head: will stick at the top -->
+	  <div class="hero-head">
+	    <nav class="navbar">
+	      <div class="container">
+	        <div class="navbar-brand homebtn">
+	           <%= link_to root_path do %>
+   <%= image_tag "blogging.png", class: "bloghome" %><span>Demo Blog</span>
+<% end %>
+	          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+	            <span></span>
+	            <span></span>
+	            <span></span>
+	          </span>
+	        </div>
+	        <div id="navbarMenuHeroA" class="navbar-menu">
+	          <div class="navbar-end">
+	          	<% if  session[:user_id].present? %>
+	          	<% @username = User.where(:id=>session[:user_id]).pluck(:first_name).shift.strip %>
+	            <%= link_to "Create New Post", new_post_path, class:"navbar-item btn btn-info" %>
+	            <%= link_to "Logout"+" "+"("+@username.capitalize+")", "/logout", method: :get, class:"navbar-item btn btn-danger" %>
+	            <% else %>
+                
+	            <%= link_to "Login/SignUp", "/register", method: :get, class:"navbar-item btn btn-secondary" %>
+	            <% end %>
+	          </div>
+	        </div>
+	      </div>
+	    </nav>
+	  </div>
+
+	  <!-- Hero content: will be in the middle -->
+	  <div class="hero-body">
+	    <div class="container has-text-centered">
+	      <h1 class="title">
+	        <%= yield :page_title %>
+	      </h1>
+	    </div>
+	  </div>
+	</section>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bulma";
+
+#helpBlock .notice {
+  color: red;
+}
+
+#helpBlock2 .notice {
+  color: red;
+}
+.comment-form h2 {
+	
+	font-size: 20px;
+}
+.hero-body .title {
+	text-transform: capitalize;
+}
+.ucomment {
+	background-color: #bbb4b4 !important;
+	font-weight: 600;
+}
+.posttitle a {
+	text-decoration: none;
+}
+.date {
+	font-style: italic;
+	color: #0d554a;
+}
+.dock-item:hover {
+	background: transparent;
+}
+.posttitle a:hover {
+	background: transparent;
+}
+.likedpost {
+	cursor: pointer;
+}
+.media-body .more-link:hover {
+	background: transparent;
+	color: #168070;
+}
+.level-item .button:hover {
+	background: #ff3860;
+	color: #fff;
+	text-decoration: none;
+}
+.comentname {
+	text-transform: capitalize;
+	text-align: left;
+	color: #ff3860;
+	font-size: 16px !important;
+}
+.row.butnhome {
+	margin-left: 20px;
+}
+.butnhome a{
+	
+	color:#fff;
+}
+.butnhome a:hover {
+	background: #637790;
+	text-decoration: none;
+}
+.homebtn a:hover {
+	background: #40998c8f;
+	text-decoration: none;
+}

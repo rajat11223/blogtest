@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div class="row butnhome">
+  <%= link_to root_path do %>
+   <%= image_tag "blogging.png", class: "bloghome" %><span>Demo Blog</span>
+<% end %>
+  
+
+</div>
+<div class="container mb-5">  
+  <center>
+  <button type="button" class="btn btn-info  btn-lg fleft " >Login</button>
+  <button type="button" class="btn btn-info  btn-lg fright active" >SignUp</button>
+     </center>   
+</div>
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+             <%= render 'users/register' %> 
+              <%= render 'users/login' %> 
+        </section>
+
+    </div>
+
+    <!-- JS -->   

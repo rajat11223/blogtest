@@ -1,0 +1,36 @@
+<div class="container disnone" id="flogin">
+                <div class="signup-content">      
+                     
+				<%= form_tag(process_login_users_url, remote: true, multipart: true,id:'loginform') do %>
+ 
+       <h2 class="form-title">Login account</h2>
+         <span id="helpBlock2" class="help-block"></span>  
+<div class="form-group">
+                         
+                            <%= text_field_tag :email, params[:email],placeholder: " User-Email" , :class => 'form-input',:required => true %>	
+                        </div>
+
+            
+           
+
+          <div class="form-group">
+						
+						 <%= password_field_tag :password, nil,placeholder: " Password" , :class => 'form-input',:required => true %>
+						
+						</div>
+
+					 <div class="form-group">
+						<input type="checkbox" id="remember-me" checked> 
+						<label for="remember-me">Remember me</label>
+					</div>              
+
+              
+             <div class="form-group">
+                          
+                          <%= submit_tag "Login", name: "login", :class => 'form-submit',:remote=>"true" %>
+                      </div>             
+				
+				<p class="form-bottom-message"><a href = "javascript:void(0);">Forgot your password?</a></p>
+				<!-- <a href="#0" class="close-form">Close</a> -->
+			</div>
+			<% end %>

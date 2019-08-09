@@ -1,0 +1,74 @@
+    	<%= render 'categories/header' %>
+ </div>   
+ <div id="main_content">  
+ </div>  
+    	<div class="main_container">
+        
+        	<div class="row marginBttm15">
+            
+            	<div class="panel_lt">
+                	<div class="row">
+                    	<div class="white_blk">
+                        	<div class="my-border">
+                        	<h1>Edit Your Details</h1>
+                            	<div class="main_categories">
+                            
+            <div class="register custom-change">
+            <%= form_for  @user do |f| %>  
+  <% if @user.errors.any? %>  
+    <div class="error_messages">  
+            <ul>  
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>  
+        <% end %> 
+      </ul>  
+    </div>  
+  <% end %> 
+              <div class="row">
+                   <%= f.label :email %>
+                   <div class="relat">
+                      <%= f.text_field :email, :class => 'input-txt' %> 
+                      </div>
+              </div>
+              <div class="row">              
+                   <%= f.label :password %>      
+                   <div class="relat">                
+             <%= f.password_field :password , :class => 'input-txt' %> 
+            </div>
+              </div> 
+               <div class="row">
+                   <%= f.label :password_confirmation %>
+                   <div class="relat">
+               <%= f.password_field :password_confirmation , :class => 'input-txt' %>  
+              </div>
+              </div>  
+              <div class="row">
+                   <%= f.label :first_name %>
+                   <div class="relat">
+                      <%= f.text_field :first_name, :class => 'input-txt' %> 
+                      </div>
+              </div>
+              <div class="row">              
+                   <%= f.label :last_name %>      
+                   <div class="relat">                
+             <%= f.text_field :last_name , :class => 'input-txt' %> 
+             </div>
+              </div> 
+              
+                <div class="row">
+                   <%= f.label :phone_no %>
+                   <div class="relat">
+               <%= f.text_field :phone_no , :class => 'input-txt' %>  
+               </div>
+              </div>                              
+                  <p class="button"><%= f.submit 'Update Profile', :name=> 'register', :class => 'register-bttn' %></p>    
+               
+ 
+       <% end %> 
+      </ul>  
+    </div>  
+
+              
+             
+    <%= render 'categories/footer' %> 	
+                          

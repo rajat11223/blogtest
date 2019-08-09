@@ -1,0 +1,22 @@
+<div class="section">
+<%= simple_form_for @post do |f| %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :title, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.input :content, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }  %>
+    </div>
+  </div>
+  <%= f.input :userid, :as=>"hidden",input_html: { class: 'textarea',value: session[:user_id] }, wrapper: false, label_html: { class: 'label' }  %>
+  <div class="field">
+    <div class="control">
+      <%= f.input :image, input_html: { class: 'textarea' }, wrapper: false, label_html: { class: 'label' }  %>
+    </div>
+  </div>
+  <%= f.button :submit, 'Create new post', class: "button is-primary" %>
+<% end %>
+</div>

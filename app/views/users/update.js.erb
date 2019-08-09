@@ -1,0 +1,6 @@
+$('#helpBlock1').addClass('error_text'); 
+
+<% @user.errors.full_messages.each do |message| %>
+$("#helpBlock1").append('<div class="notice">* <%= escape_javascript(message)%></div>');
+<% end %>
+

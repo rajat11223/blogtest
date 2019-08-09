@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Fleewe</title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+     <header class="header_sticky header_withoutsticky">
+    	<%= render 'layouts/header' %>
+    </header>   	
+    <div class="main-content">
+    	<div class="main_container">
+        
+        	<div class="row marginBttm15">
+            
+            	<div class="panel_lt ltop">
+                	<div class="row">
+                    	<div class="white_blk">
+                        	<div class="">
+                            	<div class="main_categories">
+                           
+<%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions"><%= f.submit "Update Password" %></div>
+<% end %>
+  
+									
+                                </div>
+                            <div class="clearBoth"></div>
+                            </div>
+                            <div class="clearBoth"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel_rt rtop">                
+                  <%= render 'layouts/sidebar' %> 
+                </div>
+            </div>
+            
+            <div class="row">
+            	<p>Fleewe is a classified site that offers a unique platform to <strong>post free classified ads</strong> and allows users to buy and sell products/ services online. Here, you can post free ads online for almost anything such as rental services, education, home appliances, insurance, machines, health, electronics, tours and travels, jobs, real estate, electronics and matrimonial to name a few. At Fleewe, you can find best classified ads for new and existing products in your city search. We promise you the best deal for whatever you want and wherever you want! </p>
+            </div>
+        
+        </div>
+        </div>
+  <footer>
+ <%= render 'layouts/footer' %> 	
+    </footer>
+           
+</body>
+</html>

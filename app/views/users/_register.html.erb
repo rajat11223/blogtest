@@ -1,0 +1,38 @@
+<div class="container" id="fsignup">
+                <div class="signup-content">
+                  <%= form_for  @user,:remote=>"true", :id=>"signup-form", :class=>"signup-form" do |f| %> 
+                    
+                        <h2 class="form-title">SignUp account</h2>
+                        <span id="helpBlock" class="help-block"></span>
+                        <div class="form-group">
+                          <%= f.text_field :first_name, :class => 'form-input',placeholder: " First Name",:required => true %>
+                            
+                        </div>
+                         <div class="form-group">
+                           <%= f.text_field :last_name, :class => 'form-input',placeholder: " Last Name",:required => true %>
+                        </div> 
+                         <div class="form-group">
+                           <%= f.phone_field :phone_no, :class => 'form-input',:required => true,placeholder: " Phone-No" %> 
+                        </div>
+                        <div class="form-group">
+                           <%= f.text_field :email, :class => 'form-input',:required => true,placeholder: " User-Email" %> 
+                        </div>
+                        <div class="form-group">
+                            <%= f.password_field :password , :class => 'form-input',placeholder: " Password" ,:required => true%> 
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <%= f.password_field :password_confirmation , :class => 'form-input',placeholder: "Confirm-Password",:required => true %> 
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group">
+                          <%= f.submit 'Signup', :name=> 'register', :class => 'form-submit' %>
+                           
+                        </div>
+                    <% end %>
+                    
+                </div>
+            </div>
